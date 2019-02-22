@@ -1280,3 +1280,18 @@ Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8b
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-15 00:51:22 -0500
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54)
+DEPRECATION WARNING: Passing the environment's name as a regular argument is deprecated and will be removed in the next Rails version. Please, use the -e option instead. (called from <top (required)> at /home/JonRBerkowitz/web-auth-readme-v-000/bin/rails:9)
