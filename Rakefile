@@ -3,5 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'dotenv/load'
+require 'dotenv/tasks'
+
 
 Rails.application.load_tasks
